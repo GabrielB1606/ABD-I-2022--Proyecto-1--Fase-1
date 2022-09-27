@@ -1,5 +1,5 @@
 -- tablespaces and what not
-create tablespace TS_ABD_P1_GBGC datafile 'DF_ABD_P1_GBGC.dbf' size 10m;
+create tablespace TS_ABD_P1_GBGC datafile 'DF_P1_GBGC.dbf' size 10m;
 
 -- create entity tables
 
@@ -10,7 +10,7 @@ create table usuario(
     clave           varchar2(32)    NOT NULL,
     direccion       varchar2(128),
     telefono        varchar2(16),
-    es_expositor    boolean         NOT NULL,
+    es_expositor    number          NOT NULL,
     PRIMARY KEY (correo)
 ) tablespace TS_ABD_P1_GBGC;
 
@@ -26,7 +26,7 @@ create table empresa(
     nombre          varchar2(32),   
     direccion       varchar2(128),
     telefono        varchar2(16),
-    es_privada      boolean
+    es_privada      number,
     PRIMARY KEY (nombre)
 ) tablespace TS_ABD_P1_GBGC;
 
@@ -57,7 +57,7 @@ create table participa(
     correo_usuario          varchar2(32),
     PRIMARY KEY (id_evento, correo_usuario),
     FOREIGN KEY (id_evento) REFERENCES evento(id),
-    FOREIGN KEY (correo_usuario) REFERENCES usuario(correo_usuario)
+    FOREIGN KEY (correo_usuario) REFERENCES usuario(correo)
 ) tablespace TS_ABD_P1_GBGC;
 
 create table dicta(
@@ -68,7 +68,7 @@ create table dicta(
     valoracion_contenido    number,
     PRIMARY KEY (id_evento, correo_usuario),
     FOREIGN KEY (id_evento) REFERENCES evento(id),
-    FOREIGN KEY (correo_usuario) REFERENCES usuario(correo_usuario)
+    FOREIGN KEY (correo_usuario) REFERENCES usuario(correo)
 ) tablespace TS_ABD_P1_GBGC;
 
 create table patrocina(
