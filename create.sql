@@ -1,5 +1,5 @@
 -- tablespaces and what not
-create tablespace TS_ABD_P1_GBGC datafile 'DF_P1_GBGC.dbf' size 10m;
+create tablespace TS_P1_GBGC datafile 'DF_P1_GBGC.dbf' size 10m;
 
 -- create entity tables
 
@@ -12,7 +12,7 @@ create table usuario(
     telefono        varchar2(16),
     es_expositor    number          NOT NULL,
     PRIMARY KEY (correo)
-) tablespace TS_ABD_P1_GBGC;
+) tablespace TS_P1_GBGC;
 
 create table universidad(
     nombre          varchar2(32),
@@ -20,7 +20,7 @@ create table universidad(
     fecha_creacion  date,
     acronimo        varchar2(32),
     PRIMARY KEY (nombre)
-) tablespace TS_ABD_P1_GBGC;
+) tablespace TS_P1_GBGC;
 
 create table empresa(
     nombre          varchar2(32),   
@@ -28,7 +28,7 @@ create table empresa(
     telefono        varchar2(16),
     es_privada      number,
     PRIMARY KEY (nombre)
-) tablespace TS_ABD_P1_GBGC;
+) tablespace TS_P1_GBGC;
 
 create table evento(
     id                  number,
@@ -39,7 +39,7 @@ create table evento(
     area                varchar2(64),
     PRIMARY KEY(id),
     FOREIGN KEY(nombre_universidad) REFERENCES universidad(nombre)
-) tablespace TS_ABD_P1_GBGC;
+) tablespace TS_P1_GBGC;
 
 -- create relation tables
 
@@ -50,7 +50,7 @@ create table pertenece(
     PRIMARY KEY (nombre_universidad, correo_usuario),
     FOREIGN KEY (nombre_universidad) REFERENCES universidad(nombre),
     FOREIGN KEY (correo_usuario) REFERENCES usuario(correo)
-) tablespace TS_ABD_P1_GBGC;
+) tablespace TS_P1_GBGC;
 
 create table participa(
     id_evento               number,
@@ -58,7 +58,7 @@ create table participa(
     PRIMARY KEY (id_evento, correo_usuario),
     FOREIGN KEY (id_evento) REFERENCES evento(id),
     FOREIGN KEY (correo_usuario) REFERENCES usuario(correo)
-) tablespace TS_ABD_P1_GBGC;
+) tablespace TS_P1_GBGC;
 
 create table dicta(
     id_evento               number,
@@ -69,7 +69,7 @@ create table dicta(
     PRIMARY KEY (id_evento, correo_usuario),
     FOREIGN KEY (id_evento) REFERENCES evento(id),
     FOREIGN KEY (correo_usuario) REFERENCES usuario(correo)
-) tablespace TS_ABD_P1_GBGC;
+) tablespace TS_P1_GBGC;
 
 create table patrocina(
     id_evento               number,
@@ -79,4 +79,4 @@ create table patrocina(
     PRIMARY KEY (id_evento, nombre_empresa),
     FOREIGN KEY (id_evento) REFERENCES evento(id),
     FOREIGN KEY (nombre_empresa) REFERENCES empresa(nombre)
-) tablespace TS_ABD_P1_GBGC;
+) tablespace TS_P1_GBGC;

@@ -1,0 +1,1 @@
+insert into universidad values('UCV', 'shit', '01/10/2022', 'UCV');
