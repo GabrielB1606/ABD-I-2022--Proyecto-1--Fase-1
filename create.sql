@@ -61,12 +61,13 @@ create table participa(
 ) tablespace TS_P1_GBGC;
 
 create table dicta(
+    id_charla               number,
     id_evento               number,
     correo_usuario          varchar2(32),
     nombre_charla           varchar2(32),
     valoracion_charla       number,
     valoracion_contenido    number,
-    PRIMARY KEY (id_evento, correo_usuario),
+    PRIMARY KEY (id_evento, id_charla),
     FOREIGN KEY (id_evento) REFERENCES evento(id),
     FOREIGN KEY (correo_usuario) REFERENCES usuario(correo)
 ) tablespace TS_P1_GBGC;
