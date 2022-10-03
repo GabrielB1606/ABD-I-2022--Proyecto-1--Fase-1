@@ -1,18 +1,20 @@
 -- charlas de un evento y su expositor
 create or replace view charlas_por_evento as 
-    select evento.id, evento.nombre, dicta.nombre_charla, usuario.nombre as expositor
+    select evento.nombre as "Evento", dicta.nombre_charla as "Charla", usuario.nombre as "Expositor"
     from evento 
     inner join dicta 
         on evento.id = dicta.id_evento
     inner join usuario
-        on dicta.correo_usuario = usuario.correo
-    group by evento.id, evento.nombre, dicta.nombre_charla, usuario.nombre;
+        on dicta.id_usuario = usuario.id
+    group by evento.nombre, dicta.nombre_charla, usuario.nombre;
 
 
 -- los eventos que ha patrocinado una empresa 
 create or replace view eventos_por_empresa as
-    select patrocina.nombre_empresa, evento.nombre
-        from patrocina
+    select empresa.nombre as "Empresa", evento.nombre as "Evento"
+        from empresa 
+        inner join patrocina
+            on empresa.id = patrocina.id_empresa
         inner join evento
-            on evento.id = patrocina.id_evento
-    group by patrocina.nombre_empresa, evento.nombre;
+            on patrocina.id_evento = evento.id
+    group by empresa.nombre, evento.nombre;
