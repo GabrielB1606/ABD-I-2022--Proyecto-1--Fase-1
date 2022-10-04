@@ -1,6 +1,6 @@
 select 
-  table_name as "Table Name",
-  sum(data_length) as "Register Size (B)"
+  table_name as "Table",
+  sum(data_length) as "Size (B)"
 from user_tab_columns
 where table_name in (
   select table_name

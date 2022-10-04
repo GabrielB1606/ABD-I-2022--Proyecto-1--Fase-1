@@ -1,4 +1,3 @@
-column "Tablespace" format a13
 column "Used MB"    format 99,999,999
 column "Free MB"    format 99,999,999
 column "Total MB"   format 99,999,999

@@ -1,7 +1,7 @@
 select 
-  table_name,
-  column_name,
-  data_length as "Column Size (B)"
+  table_name as "Table",
+  column_name as "Column",
+  data_length as "Size (B)"
 from user_tab_columns
 where table_name in (
   select table_name

@@ -1,5 +1,5 @@
 select 
-  table_name as "Table Name",
+  table_name as "Table",
   floor(512/sum(data_length)) as "Block Factor"
   from user_tab_columns
   where table_name in (
