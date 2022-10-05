@@ -10,8 +10,7 @@ create table usuario(
     apellido        varchar2(32)    NOT NULL,
     clave           varchar2(32)    NOT NULL,
     direccion       varchar2(128),
-    telefono        varchar2(16),
-    es_expositor    number          NOT NULL
+    telefono        varchar2(16)
 ) tablespace TS_P1_GBGC;
 
 create table universidad(

@@ -3,9 +3,7 @@ alter table usuario
         constraint correo_unique
             unique(correo),
         constraint pk_usuario
-            PRIMARY KEY(id),
-        constraint expositor_chk
-            check(es_expositor in (0, 1))
+            PRIMARY KEY(id)
     );
 
 alter table universidad
@@ -22,6 +20,8 @@ alter table empresa
 
 alter table evento
     add (
+        constraint fecha_chk
+            check(fecha_fin >= fecha_inicio),
         constraint area_chk
             check( area in ('Tecnología', 'Derecho', 'Artes', 'Filosofía', 'Comunicación', 'Salud') ),
         constraint pk_evento
