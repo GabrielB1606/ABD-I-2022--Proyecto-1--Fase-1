@@ -1,0 +1,16 @@
+column "Tablespace" format A12;
+column "Table" format A12;
+column "Type" format A8;
+column "Column" format A16;
+
+SET PAGESIZE 100
+SET NEWPAGE 0
+SET SPACE 0
+SET LINESIZE 128
+SET ECHO OFF
+SET FEEDBACK OFF
+SET VERIFY OFF
+SET HEADING ON
+SET MARKUP HTML OFF SPOOL OFF
+SET COLSEP ' '
+SET WRAP OFF

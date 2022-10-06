@@ -37,7 +37,9 @@ alter table pertenece
         constraint fk_pertenece_universidad
             FOREIGN KEY (id_universidad) REFERENCES universidad(id),
         constraint fk_pertenece_usuario
-            FOREIGN KEY (id_usuario) REFERENCES usuario(id)
+            FOREIGN KEY (id_usuario) REFERENCES usuario(id),
+        constraint uq_inscripciones
+            UNIQUE (id_universidad, id_usuario)
     );
 
 alter table participa
@@ -47,7 +49,9 @@ alter table participa
         constraint fk_participa_evento
             FOREIGN KEY (id_evento) REFERENCES evento(id),
         constraint fk_participa_usuario
-            FOREIGN KEY (id_usuario) REFERENCES usuario(id)
+            FOREIGN KEY (id_usuario) REFERENCES usuario(id),
+        constraint uq_participante
+            UNIQUE (id_usuario, id_evento)
     );
 
 alter table dicta
