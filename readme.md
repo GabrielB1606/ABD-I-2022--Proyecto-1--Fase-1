@@ -11,7 +11,7 @@ Para montar la base de datos, ejecutar el archivo _start.sql_. Este archivo ejec
 Para droppear todas las estructuras relacionadas con la base de datos, ejecutar el archivo _drop.sql_.
 
 ## Views
-Para seleccionar las vistas especificadas en el enunciado del proyecto, ejecutar el archivo _views.sql_.
+Para seleccionar las vistas especificadas en el enunciado del proyecto, ejecutar el archivo _views.sql_. (Se recomiendo ejecutar primero _util/pretty\_sqlplus.sql_)
 
 ## Probar Constraints y Triggers
 En el archivo _DML\_queries/test\_constraints.sql_ hay algunos inserts que violan las reglas del negocio.
