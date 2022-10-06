@@ -5,10 +5,10 @@
 * __DML\_queries__: Inserción de Datos.
 
 ## Cargar Base de Datos
-Para montar la base de datos, ejecutar el archivo `start.sql` . Este archivo ejecutará en el orden indicado los queries DDL e insertará data dummy en la base de datos.
+Para montar la base de datos, ejecutar el archivo `start.sql`. Este archivo ejecutará en el orden indicado los queries DDL e insertará data dummy en la base de datos.
 
 ## Borrar Base de Datos
-Para droppear todas las estructuras relacionadas con la base de datos, ejecutar el archivo `drop.sql` .
+Para droppear todas las estructuras relacionadas con la base de datos, ejecutar el archivo `drop.sql`.
 
 ## Views
 Para seleccionar las vistas especificadas en el enunciado del proyecto, ejecutar el archivo `views.sql`. (Se recomiendo ejecutar primero `util/pretty_sqlplus.sql`)
