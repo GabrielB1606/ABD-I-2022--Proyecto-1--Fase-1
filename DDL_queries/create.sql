@@ -15,7 +15,7 @@ create table usuario(
 
 create table universidad(
     id              number,
-    nombre          varchar2(32),
+    nombre          varchar2(64),
     descripcion     varchar2(256),
     fecha_creacion  date,
     acronimo        varchar2(32)
