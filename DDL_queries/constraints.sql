@@ -23,7 +23,7 @@ alter table evento
         constraint fecha_chk
             check(fecha_fin >= fecha_inicio),
         constraint area_chk
-            check( area in ('Tecnología', 'Derecho', 'Artes', 'Filosofía', 'Comunicación', 'Salud') ),
+            check( area in ('Tecnologia', 'Derecho', 'Artes', 'Filosofia', 'Comunicacion', 'Salud') ),
         constraint pk_evento
             PRIMARY KEY(id),
         constraint fk_evento_universidad
