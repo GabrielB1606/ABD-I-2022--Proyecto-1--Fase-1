@@ -65,6 +65,6 @@ if __name__ == "__main__":
             pk += 1
 
     # escribir instrucciones SQL en archivo .sql
-    f = open("../insert_"+str(n_eventos)+"eventos.sql", "w")
+    f = open("insert_"+str(n_eventos)+"eventos.sql", "w")
     f.write(txt)
     f.close()
