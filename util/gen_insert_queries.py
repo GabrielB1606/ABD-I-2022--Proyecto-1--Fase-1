@@ -64,7 +64,7 @@ if __name__ == "__main__":
             txt += generate_insert("patrocina", [ str(pk), str(evento), str(random.randint(0, n_empresas-1)), "1000", "'01/02/20"+ str(random.randint(18,22)) +"'" ] )
             pk += 1
 
-    # escribir instrucciones SQL en insert_py.sql
-    f = open("../insert_py.sql", "w")
+    # escribir instrucciones SQL en archivo .sql
+    f = open("../insert_"+str(n_eventos)+"eventos.sql", "w")
     f.write(txt)
     f.close()
