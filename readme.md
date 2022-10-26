@@ -25,3 +25,14 @@ En la carpeta `DD_queries` se encuentran todas las sentencias SQL usadas para la
 El script `util/pretty_sqlplus.sql` cambia el formato de la consola de oracle para que los resultados sean más legibles.
 
 ## Fase II
+
+* __fase2\_queries__: Queries planteados en el enunciado y creación de indices. 
+  
+### Queries
+Los queries especificados en el enunciado corresponden a los archivos `fase2_queries/query_1.sql` y `fase2_queries/query_2.sql`
+
+### Indices
+Con el fin de optimizar los queries planteados, se definieron los indices especificados en `fase2_queries/index.sql`. Estos indices se declaran en `start.sql`, tomar esto en consideración de querer comparar el costo de los queries con y sin los índices.
+
+### Generar Inserts
+Para generar los registros necesarios para poblar la base de datos, fue creado el script `util/gen_insert_queries.py`. Este script toma como argumento un número entero, el cual indica la cantidad de eventos con la que se desea llenar la base de datos (la cantidad por defecto de eventos es 3, es decir, un año de eventos). Este script genera en el directorio de ejecución un archivo con el nombre `insert_<n>eventos.sql`, siendo `n` la cantidad de eventos que se insertarán en la base de datos.
